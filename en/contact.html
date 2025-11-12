@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact — AG3L</title>
+    <meta name="description" content="Contact AG3L Insurance." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="/assets/main-76_VBogZ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-DUjaADdW.css">
+  </head>
+  <body class="antialiased text-slate-800">
+
+<header x-data="{ open:false }" class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <a href="/en/index.html" class="flex items-center gap-3" aria-label="AG3L Insurance — Accueil">
+        <img src="/logo-ag3l.png" alt="AG3L Insurance" class="h-10 w-auto object-contain" width="160" height="160" fetchpriority="high" />
+        <div class="leading-tight">
+          <div class="text-base font-extrabold tracking-tight text-slate-900">AG3L Insurance</div>
+          <div class="text-xs text-slate-500">Financial services firm</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
+        <a href="/index.html" class="hover:text-brand-800">Home</a>
+        <a href="/en/about.html" class="hover:text-brand-800">About</a>
+        <a href="/en/who.html" class="hover:text-brand-800">Who we are</a>
+        <a href="/en/services.html" class="hover:text-brand-800">Services</a>
+        <a href="/en/team.html" class="hover:text-brand-800">Team</a>
+        <a href="/en/contact.html" class="btn">Contact</a>
+        <button id="langToggle" class="rounded-xl border px-3 py-2 hover:bg-slate-50" type="button">FR</button>
+      </nav>
+      <button @click="open=!open" class="md:hidden inline-flex items-center justify-center rounded-xl border px-3 py-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+      </button>
+    </div>
+    <div x-show="open" x-transition class="md:hidden pb-4">
+      <div class="grid gap-2 text-slate-700 font-semibold">
+        <a href="/index.html" class="rounded-xl px-3 py-2 hover:bg-slate-50">Home</a>
+        <a href="/en/about.html" class="rounded-xl px-3 py-2 hover:bg-slate-50">About</a>
+        <a href="/en/who.html" class="rounded-xl px-3 py-2 hover:bg-slate-50">Who we are</a>
+        <a href="/en/services.html" class="rounded-xl px-3 py-2 hover:bg-slate-50">Services</a>
+        <a href="/en/team.html" class="rounded-xl px-3 py-2 hover:bg-slate-50">Team</a>
+        <a href="/en/contact.html" class="btn mt-1 w-full justify-center">Contact</a>
+        <button id="langToggleMobile" class="rounded-xl px-3 py-2 text-left hover:bg-slate-50" type="button">FR</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section bg-white">
+  <div class="maxw grid gap-10 md:grid-cols-2">
+    <div>
+      <h1 class="display-md">Contact us</h1>
+      <p class="lede mt-3">Send us an email and a team member will reply.</p>
+      <form class="mt-6 grid gap-4" action="mailto:reception@ag3l.ca" method="post" enctype="text/plain">
+        <input class="rounded-2xl border border-slate-300 px-4 py-3" placeholder="Name" name="name">
+        <input class="rounded-2xl border border-slate-300 px-4 py-3" placeholder="Email*" name="email" required>
+        <textarea class="min-h-[160px] rounded-2xl border border-slate-300 px-4 py-3" placeholder="Message" name="message"></textarea>
+        <p class="text-xs text-slate-500">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+        <button class="btn w-max mt-2">Send</button>
+      </form>
+    </div>
+    <div class="card">
+      <div class="text-lg font-bold text-slate-900">AG3L Insurance</div>
+      <p class="mt-2">7581 Chemin de Chambly, St-Hubert, QC J3Y 5K2, CA</p>
+      <p class="mt-3"><a class="btn-outline" href="https://maps.google.com/?q=7581+Chemin+de+Chambly,+St-Hubert,+Quebec,+J3Y+5K2" target="_blank" rel="noopener">Directions</a></p>
+      <p class="mt-4"><a class="text-brand-800 hover:underline" href="tel:+14504453444">(450) 445-3444</a> / <a class="text-brand-800 hover:underline" href="tel:+18777453444">1-877-745-3444</a></p>
+      <p class="mt-1"><a class="text-brand-800 hover:underline" href="mailto:reception@ag3l.ca">reception@ag3l.ca</a></p>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t border-slate-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid gap-6 md:grid-cols-3">
+    <div>
+      <div class="text-lg font-extrabold text-slate-900">AG3L Insurance</div>
+      <p class="mt-2 text-slate-600">7581 Chemin de Chambly, St-Hubert, QC J3Y 5K2</p>
+      <p class="mt-1"><a class="text-brand-800 hover:underline" href="tel:+14504453444">(450) 445-3444</a> / <a class="text-brand-800 hover:underline" href="tel:+18777453444">1-877-745-3444</a></p>
+      <p class="mt-1"><a class="text-brand-800 hover:underline" href="mailto:reception@ag3l.ca">reception@ag3l.ca</a></p>
+    </div>
+    <div>
+      <div class="font-semibold text-slate-900">Hours</div>
+      <ul class="mt-2 text-slate-600 space-y-1">
+        <li>Mon – Thu: 08:30 – 19:00</li>
+        <li>Fri: 08:30 – 17:00</li>
+        <li>Sat & Sun: Closed</li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-semibold text-slate-900">Links</div>
+      <ul class="mt-2 space-y-2 text-slate-600">
+        <li><a href="/en/index.html" class="hover:text-brand-800">Home</a></li>
+        <li><a href="/en/who.html" class="hover:text-brand-800">Who we are</a></li>
+        <li><a href="/en/team.html" class="hover:text-brand-800">Team</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="py-5 text-center text-xs text-slate-500">© <span id="year"></span> AG3L Insurance. All rights reserved.</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+</body>
+</html>
