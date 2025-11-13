@@ -22,12 +22,10 @@ if (yearEl) {
 
 // --- Language toggle routing ---
 
-// Normalise path (collapse repeated slashes)
 function normalizePath(path) {
   return path.replace(/\/+/g, '/');
 }
 
-// Map FR -> EN
 const frToEn = {
   '/': '/en/index.html',
   '/index.html': '/en/index.html',
@@ -38,7 +36,6 @@ const frToEn = {
   '/contact.html': '/en/contact.html',
 };
 
-// Map EN -> FR
 const enToFr = {
   '/en': '/index.html',
   '/en/': '/index.html',
@@ -67,7 +64,7 @@ function toggleLang() {
   window.location.href = target;
 }
 
-// Attach to both desktop & mobile buttons (robust to inner elements)
+// Attach to both desktop & mobile buttons
 document.addEventListener('click', (event) => {
   const btn = event.target.closest('#langToggle, #langToggleMobile');
   if (btn) {
