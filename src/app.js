@@ -1,6 +1,6 @@
 // src/app.js
 
-// --- Scroll reveal -----------------------------------------
+// --- Reveal on scroll ---
 const io = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -14,69 +14,61 @@ const io = new IntersectionObserver(
 
 document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
 
-// --- Dynamic year in footer --------------------------------
+// --- Footer year ---
 const yearEl = document.getElementById('year');
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
-// --- Language toggle routing -------------------------------
+// --- Language toggle routing ---
 
+// Normalise path (remove repeated slashes)
 function normalizePath(path) {
-  // Remove trailing slashes
-  const clean = path.replace(/\/+$/, '') || '/';
-
-  if (clean === '/') return '/index.html';
-  if (clean === '/en') return '/en/index.html';
-
-  return clean;
+  return path.replace(/\/+/g, '/');
 }
 
+// Map FR -> EN
+const frToEn = {
+  '/': '/en/index.html',
+  '/index.html': '/en/index.html',
+  '/about.html': '/en/about.html',
+  '/who.html': '/en/who.html',
+  '/services.html': '/en/services.html',
+  '/equipe.html': '/en/team.html',
+  '/contact.html': '/en/contact.html',
+};
+
+// Map EN -> FR
+const enToFr = {
+  '/en/index.html': '/index.html',
+  '/en/about.html': '/about.html',
+  '/en/who.html': '/who.html',
+  '/en/services.html': '/services.html',
+  '/en/team.html': '/equipe.html',
+  '/en/contact.html': '/contact.html',
+};
+
 function toggleLang() {
-  const rawPath = window.location.pathname;
+  const rawPath = window.location.pathname || '/';
   const path = normalizePath(rawPath);
-
-  // French → English
-  const frToEn = {
-    '/index.html': '/en/index.html',
-    '/about.html': '/en/about.html',
-    '/who.html': '/en/who.html',
-    '/services.html': '/en/services.html',
-    '/equipe.html': '/en/team.html',
-    '/contact.html': '/en/contact.html'
-  };
-
-  // English → French
-  const enToFr = {
-    '/en/index.html': '/index.html',
-    '/en/about.html': '/about.html',
-    '/en/who.html': '/who.html',
-    '/en/services.html': '/services.html',
-    '/en/team.html': '/equipe.html',
-    '/en/contact.html': '/contact.html'
-  };
 
   let target;
 
   if (path.startsWith('/en/')) {
-    // We are on an English page → go to French
+    // EN → FR
     target = enToFr[path] || '/index.html';
   } else {
-    // We are on a French page → go to English
+    // FR → EN
     target = frToEn[path] || '/en/index.html';
   }
 
-  window.location.pathname = target;
+  window.location.href = target;
 }
 
-// Click handler for the EN / FR buttons
+// Attach to both desktop & mobile buttons
 document.addEventListener('click', (event) => {
-  const target = event.target;
-  if (!target) return;
-
-  const id = target.id;
+  const id = event.target?.id;
   if (id === 'langToggle' || id === 'langToggleMobile') {
-    event.preventDefault();
     toggleLang();
   }
 });
