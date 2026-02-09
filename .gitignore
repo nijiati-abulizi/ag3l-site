@@ -1,13 +1,13 @@
+# Dependencies
 node_modules/
+
+# Build output
 dist/
-.DS_Store
 
-.DS_Store
-**/.DS_Store
-
+# Allow domain config files in dist (GitHub Pages)
 !dist/CNAME
 !dist/.nojekyll
 
-# macOS
+# macOS junk
 .DS_Store
 **/.DS_Store
