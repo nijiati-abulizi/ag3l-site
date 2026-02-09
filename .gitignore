@@ -4,3 +4,6 @@ dist/
 
 .DS_Store
 **/.DS_Store
+
+!dist/CNAME
+!dist/.nojekyll
