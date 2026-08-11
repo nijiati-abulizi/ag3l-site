@@ -1,12 +1,8 @@
 # Dependencies
 node_modules/
 
-# Build output
+# Build output (produced by CI, never committed)
 dist/
-
-# Allow domain config files in dist (GitHub Pages)
-!dist/CNAME
-!dist/.nojekyll
 
 # macOS junk
 .DS_Store
